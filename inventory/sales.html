@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="sales.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="inventory-container">
+        <h2>INVENTORY </h2>
+
+        <!-- Form for adding products -->
+        <form id="productForm">
+
+            <label for="stock">Stock Count</label>
+            <input type="number" id="stock" placeholder="Enter stock quantity" required>
+
+            <label for="price">Price</label>
+            <input type="number" id="price" step="0.01" placeholder="Enter price" required>
+
+            <label for="sales">Sales</label>
+            <input type="number" id="sales" placeholder="Enter sales quantity" required>
+
+            <button type="submit">Add</button>
+        </form>
+
+        <!-- Product List -->
+        <div class="product-list">
+            <h3> List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Stock</th>
+                        <th>Price</th>
+                        <th>Sales</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    <!-- Dynamic rows -->
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Graph Section -->
+        <div class="graphs">
+            <h3>Inventory Analytics</h3>
+            <canvas id="stockChart"></canvas>
+            <canvas id="salesChart" style="margin-top: 20px;"></canvas>
+        </div>
+    </div>
+    <script src="sales.js"></script>
+</body>
+</html>
