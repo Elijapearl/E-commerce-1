@@ -1,13 +1,9 @@
 let products = JSON.parse(localStorage.getItem('products') || '[]');
 
-// DOM References
 const productForm = document.getElementById('productForm');
 const productTableBody = document.getElementById('productTableBody');
 
-// Charts
 let stockChart, salesChart;
-
-// Add Product
 productForm?.addEventListener('submit', function (e) {
     e.preventDefault();
     const stock = parseInt(document.getElementById('stock').value);
@@ -22,7 +18,6 @@ productForm?.addEventListener('submit', function (e) {
     updateGraphs();
 });
 
-// Populate Table
 function updateTable() {
     productTableBody.innerHTML = '';
 
@@ -37,14 +32,11 @@ function updateTable() {
         productTableBody.appendChild(row);
     });
 }
-
-// Update Graphs
 function updateGraphs() {
     const labels = products.map((product) => product.productName);
     const stockData = products.map((product) => product.stock);
     const salesData = products.map((product) => product.sales);
 
-    // Stock Chart
     if (stockChart) stockChart.destroy();
     stockChart = new Chart(document.getElementById('stockChart'), {
         type: 'bar',
@@ -71,7 +63,6 @@ function updateGraphs() {
         },
     });
 
-    // Sales Chart
     if (salesChart) salesChart.destroy();
     salesChart = new Chart(document.getElementById('salesChart'), {
         type: 'line',
