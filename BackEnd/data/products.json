@@ -1,0 +1,260 @@
+[
+    {
+        "name": "Organic Green Tea",
+        "price": 15.49,
+        "description": "Rich in antioxidants, this tea is perfect for a refreshing break.",
+        "ratings": 4.2,
+        "images": [
+            {
+                "public_id": "green_tea_image1",
+                "url": "https://example.com/images/green_tea1.jpg"
+            }
+        ],
+        "category": "Beverage",
+        "seller": "Healthy Beverages Co.",
+        "stock": 200,
+        "numOfReviews": 2,
+        "reviews": [
+            {
+                "name": "Sophia",
+                "rating": 5,
+                "comment": "Great taste and quality. Highly recommend!"
+            },
+            {
+                "name": "Liam",
+                "rating": 3.5,
+                "comment": "Good, but a bit expensive."
+            }
+        ],
+        "createdAt": "2024-11-16T09:45:00.000Z"
+    },
+    {
+        "name": "Herbal Shampoo",
+        "price": 18.75,
+        "description": "A nourishing shampoo made with natural herbs.",
+        "ratings": 4.7,
+        "images": [
+            {
+                "public_id": "herbal_shampoo_image1",
+                "url": "https://example.com/images/herbal_shampoo1.jpg"
+            }
+        ],
+        "category": "Beauty",
+        "seller": "Nature's Care",
+        "stock": 120,
+        "numOfReviews": 4,
+        "reviews": [
+            {
+                "name": "Emma",
+                "rating": 5,
+                "comment": "My hair feels amazing after using this shampoo."
+            },
+            {
+                "name": "James",
+                "rating": 4,
+                "comment": "Good, but it could use a better fragrance."
+            },
+            {
+                "name": "Oliver",
+                "rating": 5,
+                "comment": "Perfect for my dry scalp!"
+            },
+            {
+                "name": "Isabella",
+                "rating": 4.5,
+                "comment": "Love the herbal essence!"
+            }
+        ],
+        "createdAt": "2024-11-15T14:00:00.000Z"
+    },
+    {
+        "name": "Protein Bars (Pack of 12)",
+        "price": 22.99,
+        "description": "Delicious and nutritious protein bars for a quick energy boost.",
+        "ratings": 4.3,
+        "images": [
+            {
+                "public_id": "protein_bars_image1",
+                "url": "https://example.com/images/protein_bars1.jpg"
+            }
+        ],
+        "category": "Food",
+        "seller": "Fitness Fuel",
+        "stock": 80,
+        "numOfReviews": 5,
+        "reviews": [
+            {
+                "name": "Mason",
+                "rating": 4,
+                "comment": "Great for post-workout snacks."
+            },
+            {
+                "name": "Charlotte",
+                "rating": 4.5,
+                "comment": "Tasty and keeps me full."
+            },
+            {
+                "name": "Aiden",
+                "rating": 3.5,
+                "comment": "Good, but slightly dry."
+            },
+            {
+                "name": "Amelia",
+                "rating": 5,
+                "comment": "Best protein bars I've had!"
+            },
+            {
+                "name": "Lucas",
+                "rating": 4.8,
+                "comment": "Highly recommend!"
+            }
+        ],
+        "createdAt": "2024-11-14T12:30:00.000Z"
+    },
+    {
+        "name": "Lavender Laundry Detergent",
+        "price": 12.50,
+        "description": "Eco-friendly detergent with a calming lavender scent.",
+        "ratings": 4.0,
+        "images": [
+            {
+                "public_id": "lavender_detergent_image1",
+                "url": "https://example.com/images/lavender_detergent1.jpg"
+            }
+        ],
+        "category": "Laundry",
+        "seller": "EcoClean",
+        "stock": 50,
+        "numOfReviews": 2,
+        "reviews": [
+            {
+                "name": "Grace",
+                "rating": 4,
+                "comment": "Cleans well, but I prefer a stronger scent."
+            },
+            {
+                "name": "Elijah",
+                "rating": 4.5,
+                "comment": "Great product for eco-conscious people."
+            }
+        ],
+        "createdAt": "2024-11-13T08:00:00.000Z"
+    },
+    {
+        "name": "Dark Roast Coffee Beans",
+        "price": 25.00,
+        "description": "Premium quality coffee beans for a rich, bold flavor.",
+        "ratings": 4.6,
+        "images": [
+            {
+                "public_id": "coffee_beans_image1",
+                "url": "https://example.com/images/coffee_beans1.jpg"
+            }
+        ],
+        "category": "Beverage",
+        "seller": "Roastery Bliss",
+        "stock": 300,
+        "numOfReviews": 6,
+        "reviews": [
+            {
+                "name": "Benjamin",
+                "rating": 5,
+                "comment": "Best coffee beans ever!"
+            },
+            {
+                "name": "Sophia",
+                "rating": 4,
+                "comment": "Great taste but slightly overpriced."
+            },
+            {
+                "name": "Ella",
+                "rating": 4.5,
+                "comment": "Perfect for espresso lovers."
+            },
+            {
+                "name": "Henry",
+                "rating": 5,
+                "comment": "Absolutely fantastic!"
+            },
+            {
+                "name": "Mia",
+                "rating": 4.2,
+                "comment": "Smooth and rich flavor."
+            },
+            {
+                "name": "Logan",
+                "rating": 4.8,
+                "comment": "My go-to coffee beans."
+            }
+        ],
+        "createdAt": "2024-11-12T07:45:00.000Z"
+    },
+    {
+        "name": "Natural Lip Balm",
+        "price": 6.99,
+        "description": "Hydrates and protects your lips with natural ingredients.",
+        "ratings": 4.8,
+        "images": [
+            {
+                "public_id": "lip_balm_image1",
+                "url": "https://example.com/images/lip_balm1.jpg"
+            }
+        ],
+        "category": "Beauty",
+        "seller": "Glow Naturals",
+        "stock": 500,
+        "numOfReviews": 7,
+        "reviews": [
+            {
+                "name": "Zoey",
+                "rating": 5,
+                "comment": "Leaves my lips feeling soft and smooth."
+            },
+            {
+                "name": "Jack",
+                "rating": 4.5,
+                "comment": "Very good, but melts quickly in the heat."
+            }
+        ],
+        "createdAt": "2024-11-10T10:20:00.000Z"
+    },
+    {
+        "name": "Granola Clusters",
+        "price": 9.99,
+        "description": "Healthy and crunchy granola clusters with a hint of honey.",
+        "ratings": 4.4,
+        "images": [
+            {
+                "public_id": "granola_clusters_image1",
+                "url": "https://example.com/images/granola_clusters1.jpg"
+            }
+        ],
+        "category": "Food",
+        "seller": "Whole Goodness",
+        "stock": 250,
+        "numOfReviews": 4,
+        "reviews": [
+            {
+                "name": "Ava",
+                "rating": 5,
+                "comment": "Perfect snack for any time of the day!"
+            },
+            {
+                "name": "Ethan",
+                "rating": 4,
+                "comment": "Great taste but too sweet for my liking."
+            },
+            {
+                "name": "Aria",
+                "rating": 4.8,
+                "comment": "Love these granola clusters!"
+            },
+            {
+                "name": "Liam",
+                "rating": 4,
+                "comment": "Nice texture, but a bit pricey."
+            }
+        ],
+        "createdAt": "2024-11-09T11:00:00.000Z"
+    }
+]
