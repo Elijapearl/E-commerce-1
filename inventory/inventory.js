@@ -89,8 +89,6 @@ function updateGraphs() {
         },
     });
 }
-
-// Initialize
 document.addEventListener('DOMContentLoaded', function () {
     updateTable();
     updateGraphs();
