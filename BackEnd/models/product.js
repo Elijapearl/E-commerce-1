@@ -22,7 +22,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    //i used array in the images so that can use multiple messages 
+    //so gumamit ako ng array para pwede magkaroon ng multiple images ang isang product 
     images:[
         {
             public_id: {
