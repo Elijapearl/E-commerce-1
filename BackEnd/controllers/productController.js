@@ -4,9 +4,11 @@ const ErrorHandler = require('../utils/errorhandler')
 
 const catchAsyncError = require('../middlewares/catchAsyncErrors')
 
+const APIFeatures = require('../utils/features')
+
 //create new product for admin => api/v1/admin/product/new
 exports.newProduct = catchAsyncError(async (req, res, next) => {
-
+ 
     const product = await Product.create(req.body)
 
     res.status(201).json({
@@ -16,14 +18,22 @@ exports.newProduct = catchAsyncError(async (req, res, next) => {
 })
 
 
-//Get all products => /api/v1/products - ito directory nya para sa postman
+//Get all products => /api/v1/products?keyword=apple - ito directory nya para sa postman
 exports.getProducts = catchAsyncError(async (req, res, next) => {
 
-    const products = await Product.find();
+    const resPerPage = 4;//ito yung count ng product na makikita per page
+    const productCount = await Product.countDocuments(); //this just counts all products
+    
+    const features = new APIFeatures(Product.find(), req.query)   
+                        .search() 
+                        .filter() 
+                        .pagination(resPerPage)
+    const products = await features.query;
 
     res.status(200).json({
         success: true,
         count: products.length,
+        productCount,
         products
     })
 })
