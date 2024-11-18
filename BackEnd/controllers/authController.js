@@ -9,12 +9,13 @@ const sendToken = require('../utils/jwtToken');
 ito is pang authenticate ng mga info na binigay ng user sa pag reregister at pang register naden mismo*/
 exports.registerUser = catchAsyncErrors( async (req, res, next) => {
 
-    const { name, email, password } = req.body;
+    const { name, email, password, store } = req.body;
 
     const user = await User.create({
         name,
         email,
         password, 
+        store,
         avatar: {
             public_id: 'users/vgtxrlm9453yi2tijzqk',
             url: 'https://res.cloudinary.com/dnmawrba8/image/upload/v1731847500/users/vgtxrlm9453yi2tijzqk.jpg'

@@ -15,6 +15,11 @@ const userSchema = new mongoose.Schema({
         unique: true,
         validate: [validator.isEmail, 'Please enter a valid email address']
     },
+    store: {
+        type: String,
+        required: [true, 'Please Enter your store name'],
+        maxlength: [50, 'Store name cannot exceed 50 characters']
+    },
     password: {
         type: String,
         required: [true, 'Please Enter your password'],
