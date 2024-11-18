@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    color: #0b6b0f;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.status {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f9fdf9;
+    border-radius: 8px;
+    border: 1px solid #e0f0e0;
+    margin: 20px 0;
+}
+
+.status h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.status p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.order-summary {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.product img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-info {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.product-info h4 {
+    font-size: 16px;
+    color: #333;
+}
+
+.product-info a {
+    color: #0b6b0f;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.price,
+.quantity,
+.total {
+    font-size: 14px;
+    color: #333;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.thank-you {
+    text-align: center;
+    margin-top: 20px;
+    color: #0b6b0f;
+    font-style: italica;
+}
+
+.thank-you p {
+    font-size: 16px;
+}
+
+.back-to-shop {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #083b09;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pending.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="assets/logo.jpg" alt="Mente Exceptional, Inc.">
+            <h2>Pending Order</h2>
+        </div>
+
+        <div class="status">
+            <h3>Please Wait...</h3>
+            <p>Your order is currently pending approval. We'll notify you once it's confirmed.</p>
+        </div>
+    
+
+        <div class="order-summary">
+            <div class="product">
+                <img src="assets/summer sunshine.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h4>Solve Summer Sunshine</h4>
+                    <a href="#">Remove</a>
+                </div>
+                <div class="price">$9.99</div>
+                <div class="quantity">
+                    <div class="quantity-controls">
+                        <button onclick="changeQuantity(-1)">-</button>
+                        <span id="quantity">1</span>
+                        <button onclick="changeQuantity(1)">+</button>
+                    </div>
+                </div>
+                <div class="total" id="total-price">$9.99</div>
+            </div>
+        </div>
+    
+        <div class="thank-you">
+            <p>Thank you for your purchase!</p>
+            <a href="#" class="back-to-shop">Continue Shopping</a>
+        </div>
+    </div>
+    
+    <script>
+        let quantity = 1;
+        const pricePerUnit = 9.99;
+    
+        function changeQuantity(amount) {
+            quantity += amount;
+            if (quantity < 1) quantity = 1; // Ensure quantity doesn't go below 1
+            document.getElementById("quantity").textContent = quantity;
+            document.getElementById("total-price").textContent = `$${(quantity * pricePerUnit).toFixed(2)}`;
+        }
+    </script>
+    
+</body>
+</html>
