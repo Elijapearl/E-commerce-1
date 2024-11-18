@@ -16,7 +16,31 @@ module.exports = (err, req, res, next) => {
     if(process.env.NODE_ENV === 'PRODUCTION'){
         let error = {...err}
 
-        error.message = err.message
+        error.message = err.message;
+
+        /*
+        Wrong Mongo id error message
+        so ito is if hindi nag eexist ung id na ginamit mo for GET request a product
+        lalabas na error 
+        this code just make sure na tama yung error na lalabas pag nagka error
+        */
+        if(err.name === 'CastError'){
+            const message = `Product not found, Invalid ID: ${err.path}`;
+            err = new ErrorHandler(message, 400);
+        }
+
+
+        /*
+        This handles the mongoose validation error
+        so lalabas ung error if nag enter ng data and kulag ng laman like 
+        kulang ng name ung product or kulang ng kahit anong product na required ang nilagay ko 
+        sa schema
+        */
+
+        if (err.name === 'ValidationError'){
+            const message = Object.values(err.errors).map(value => value.message);
+            err = new ErrorHandler(message, 400);
+        }
 
         res.status(error.statusCode).json({
             success: false,
