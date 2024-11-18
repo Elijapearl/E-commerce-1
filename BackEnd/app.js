@@ -10,6 +10,8 @@ app.use(cookieParser())
 
 
 
+
+
 //import all the routes 
 const products = require('./routes/product');
 const auth = require('./routes/auth');
