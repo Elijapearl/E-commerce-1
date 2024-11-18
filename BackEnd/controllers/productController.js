@@ -21,7 +21,7 @@ exports.newProduct = catchAsyncError(async (req, res, next) => {
 //Get all products => /api/v1/products?keyword=apple - ito directory nya para sa postman
 exports.getProducts = catchAsyncError(async (req, res, next) => {
 
-    const resPerPage = 4;//ito yung count ng product na makikita per page
+    const resPerPage = 8;//ito yung count ng product na makikita per page
     const productCount = await Product.countDocuments(); //this just counts all products
     
     const features = new APIFeatures(Product.find(), req.query)   

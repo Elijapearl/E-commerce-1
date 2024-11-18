@@ -1,9 +1,17 @@
 const express = require('express')
 const router = express.Router()
 
-const { getProducts, newProduct, getSingleProduct, updateProduct, deleteProduct} = require('../controllers/productController')
+const { getProducts, 
+        newProduct, 
+        getSingleProduct, 
+        updateProduct, 
+        deleteProduct
 
-router.route('/products').get(getProducts);
+} = require('../controllers/productController')
+
+const { isAuthenticatedUser } = require('../middlewares/auth')
+
+router.route('/products').get(isAuthenticatedUser, getProducts);
 
 router.route('/product/:id').get(getSingleProduct);
 

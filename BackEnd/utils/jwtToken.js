@@ -8,15 +8,18 @@ const sendToken = (user, statusCode, res) => {
     //options for the cookie
     const options = {
         expires: new Date(
-        Date.now() + process.env.JWT_COOKIE_EXPIRE_TME * 24 * 60 * 60 * 1000)
+        Date.now() + process.env.COOKIE_EXPIRE_TIME * 24 * 60 * 60 * 1000
+    ),
         httpOnly: true
+        //http only cookie only so that it can't be accessed by using javascript
     }
 
-    const cookiepass = {
-        secure: process.env.NODE_ENV
-        sameSite: 
-    }
+    res.status(statusCode).cookie('token',token, options).json({
+        success: true,
+        token,
+        user
+    })
 
-}
+}   
 
 module.exports = sendToken;

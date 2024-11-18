@@ -3,6 +3,8 @@ const User = require('../models/users');
 const errorHandler = require('../utils/errorhandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 
+const sendToken = require('../utils/jwtToken');
+
 /*register a user => /api/v1/register 
 ito is pang authenticate ng mga info na binigay ng user sa pag reregister at pang register naden mismo*/
 exports.registerUser = catchAsyncErrors( async (req, res, next) => {
@@ -18,13 +20,7 @@ exports.registerUser = catchAsyncErrors( async (req, res, next) => {
             url: 'https://res.cloudinary.com/dnmawrba8/image/upload/v1731847500/users/vgtxrlm9453yi2tijzqk.jpg'
         }
     })
-
-    const token = user.getJwtToken();
-
-    res.status(201).json({
-        success: true,
-        token
-    })
+    sendToken(user, 200, res)
 })
 
 //login a user => /api/v1/login
@@ -56,12 +52,6 @@ exports.loginUser = catchAsyncErrors( async (req, res, next) => {
     if (!isPasswordMatched) {
         return next(new errorHandler('Invalid Email or Password', 401))
     }
-
-    const token = user.getJwtToken();
-
-    res.status(200).json({
-        success: true,
-        token
-    })
+    sendToken(user, 200, res)
 })
 
