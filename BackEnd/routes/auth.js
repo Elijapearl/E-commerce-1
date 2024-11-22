@@ -9,7 +9,10 @@ const { registerUser,
         getUserProfile,
         updatePassword,
         updateProfile,
-        getAllUsers
+        getAllUsers,
+        getUserDetails,
+        updateUser,
+        deleteUser
 } = require('../controllers/authController');
 
 
@@ -19,12 +22,16 @@ router.route('/register').post(registerUser);
 router.route('/login').post(loginUser);
 
 router.route('/password/forgot').post(forgotPassword);
-router.route('/password/reset/:token').put(resetPassword);
+router.route('/password/reset/:token').patch(resetPassword);
 
 router.route('/logout').get(logout);
 router.route('/me').get(isAuthenticatedUser, getUserProfile);
-router.route('/password/update').put(isAuthenticatedUser, updatePassword);
-router.route('/me/update').put(isAuthenticatedUser, updateProfile);
-router.route('/me/update').get(isAuthenticatedUser, getAllUsers, authorizedRoles('admin'));
+router.route('/password/update').patch(isAuthenticatedUser, updatePassword);
+router.route('/me/update').patch(isAuthenticatedUser, updateProfile);
+router.route('/admin/users').get(isAuthenticatedUser, authorizedRoles('admin'), getAllUsers);
+router.route('/admin/user/:id')
+.get(isAuthenticatedUser, authorizedRoles('admin'),getUserDetails)
+.patch(isAuthenticatedUser, authorizedRoles('admin'), updateUser)
+.delete(isAuthenticatedUser, authorizedRoles('admin'), deleteUser);
 
 module.exports = router;

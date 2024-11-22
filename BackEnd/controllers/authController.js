@@ -1,6 +1,6 @@
 const User = require('../models/users');
 
-const errorHandler = require('../utils/errorhandler');
+const errorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 
 const sendToken = require('../utils/jwtToken');
@@ -210,9 +210,67 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
 exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
     const users = await User.find();
 
-
     res.status(200).json({
         success: true,
         users
+    })
+})
+
+
+//get specific User details => /api/v1/users/:id
+exports.getUserDetails = catchAsyncErrors( async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+
+    if(!user){
+        return next(new errorHandler(`User with ID: ${req.params.id} not found Please Try Again`))
+    }
+
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
+
+
+//Update user profile => /api/v1/admin//user/:id 
+exports.updateUser = catchAsyncErrors(async (req, res, next) => {
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email,
+        store: req.body.store,
+        role: req.body.role
+    }
+
+    //Update avatar:    
+
+    const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false
+    })
+
+    res.status(200).json({
+        success: true,
+        user
+    })      
+})
+
+
+
+//Delete specific User details => /api/v1/users/:id
+exports.deleteUser = catchAsyncErrors( async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+
+    if(!user){
+        return next(new errorHandler(`User with ID: ${req.params.id} not found Please Try Again`))
+    }
+    //remove avatar from cloudinary server
+
+    await user.deleteOne();
+
+    res.status(200).json({
+        success: true,
+        user
     })
 })
