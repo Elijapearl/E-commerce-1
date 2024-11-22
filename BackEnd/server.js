@@ -20,6 +20,7 @@ connectDatabase();
 
 const server = app.listen(process.env.PORT, () =>{
     console.log(`Listening on Port: ${process.env.PORT} and currently in ${process.env.NODE_ENV}`)
+    // console.log(req.user); 
 })
 
 //handle unhandled promise exceptions
