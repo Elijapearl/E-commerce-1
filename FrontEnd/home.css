@@ -1,110 +1,227 @@
-.navbar {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e1e1e1;
-}
-
-.navbar-brand img {
-    max-height: 40px;
-    margin-left: 20px;
-}
-
-.navbar-nav {
-    margin-left: auto;
-}
-
-.nav-item {
-    margin-left: 20px;
-}
-
-.nav-link i {
-    font-size: 1.2rem;
+@font-face {
+    font-family: Oswald;
+    src: url(../Frontend-ecommerce/assets/font/Oswald-VariableFont_wght.ttf);
 }
 
 body,
 html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
 }
 
-.header-section {
+/* Container for the entire hero section */
+.hero-section {
     height: 100vh;
+    background: url('assets/HOME-BG.jpg') no-repeat center center/cover;
     position: relative;
-    background-color: #f0f0f0;
 }
 
-.header-section img {
-    height: 100vh;
-    object-fit: cover;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    position: fixed;
     width: 100%;
+    background-color: white;
+    z-index: 1;
 }
 
-.logo-container {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 100px;
-    border-radius: 5px;
+.company {
+    font-family: Oswald;
+    font-size: 25px;
+    letter-spacing: 2px;
 }
 
-.logo-container img {
-    max-width: 600px;
-    height: auto;
+.menu {
+    margin-left: -30px;
 }
 
-.header-links a {
-    font-size: 1.5rem;
-    color: #000;
+.navbar a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 2.3vh;
 }
 
-body {
-    background-color: #f8f9fa;
+.navbar a:hover {
+    color: #27ae60;
 }
 
-.product-card {
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin-bottom: 20px;
 }
 
+.hero-inside {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Slightly transparent border */
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Button styling */
+.btn-shop-now {
+    background-color: #0a6a08;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-shop-now:hover {
+    background-color: #219150;
+}
+
+@media (max-width: 768px) {
+
+    .brand {
+        margin-left: -30px;
+    }
+
+    .image-div {
+        margin-left: -30px;
+        margin-top: 10px;
+    }
+
+    .cart-count {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-shop-now {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Section container styles */
+.products-section {
+    background-color: #f2f2f2;
+    /* Light background for the section */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.products-section h2 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Product grid styles */
+.product-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual product card styles */
+.product-card {
+    background-color: #a2daac;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image */
 .product-card img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.price {
-    color: #0b581d;
-    font-weight: bold;
+/* Product name */
+.product-card h3 {
+    color: #333;
+    font-size: 20px;
+    margin: 10px 0;
 }
 
-.popular-title {
-    margin-top: 40px;
-    margin-bottom: 20px;
+/* Product price */
+.product-card p {
+    color: #124f20;
+    font-size: 18px;
+    margin: 10px 0;
 }
 
-.footer {
-    background-color: #1b1b1b;
-    color: #ffffff;
-    border-top: 2px solid #800080;
+/* Button styles */
+.product-card button {
+    background-color: #0a6a08;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-.text-muted {
-    color: #b3b3b3 !important;
+.product-card button:hover {
+    background-color: #218838;
 }
 
-a.text-success {
-    color: #00FF00;
-}
 
-a.text-success:hover {
-    text-decoration: underline;
-    background-color: #b3b3b3;
-}
 
-.footer img {
-    max-width: 150px;
-}
+/*This is for the add to cart*/
 
-body {
-    margin: 0;
-    padding: 0;
+.cart-count {
+    background-color: #124f20;
+    width: 24px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 22px;
+    right: 25px;
 }

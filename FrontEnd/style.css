@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body{
+    background: url(assets/HOME-BG.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+.image-logo{
+    width: 400px;
+}
+
+/* Form Part Of The CSS */
+
+.form-container{
+    display: fixed;
+    width: 1000px;
+    height: 600px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+}
+
+.First{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 55%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(30px);
+    border-radius: 0 30% 20% 0;
+    transition: border-radius .3s;
+}
+
+.paragraph{
+    text-align: center;
+    color: rgb(47, 44, 44);
+    width: 300px;
+    margin-top: 20px;
+}
+
+.Second{
+    position: relative;
+    width: 45%;
+    padding: 20px;
+}
+
+.btn-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.btn{
+    font-weight: 500;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-1{
+    background: rgb(29, 142, 9);
+}
+
+.btn:hover{
+    opacity: 0.85;
+}
+
+.login-form{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 4vw;
+    transition: .3s;
+}
+.register-form{
+    position: absolute;
+    left: -50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 4vw;
+    transition: .3s;
+    margin-top: 10px;
+}
+
+.register-form .form-title{
+    margin-block: 40px 20px;
+}
+
+.form-title{
+    margin: 40px 0;
+    color: #1b1b1b;
+    font-size: 28px;
+    font-weight: 600;
+}
+.form-title2{
+    margin: 20px 0;
+    color: #1b1b1b;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.form-inputs{
+    width: 100%;
+}
+
+.input-box{
+    position: relative;
+}
+
+.input-field{
+    width: 100%;
+    height: 55px;
+    padding: 0 15px;
+    margin: 10px 0;
+    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-field2{
+    width: 100%;
+    height: 30px;
+    padding: 0 15px;
+    margin: 10px 0;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+::placeholder{
+    color: rgb(91, 90, 90);
+    font-size: 15px;
+}
+
+.input-box #icon{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.forgot-pass{
+    display: flex;
+    justify-content: right;
+    gap: 8px;
+}
+
+.forgot-pass a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-pass a:hover{
+    text-decoration: underline;
+}
+
+.input-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 55px;
+    padding: 0 15px;
+    margin: 10px 0;
+    color: black;
+    background: rgb(29, 142, 9);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-submit:hover{
+    gap: 15px;
+}
+
+
