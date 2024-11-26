@@ -8,23 +8,31 @@ const APIFeatures = require('../utils/features')
 
 //create new product for admin => api/v1/admin/product/new
 exports.newProduct = catchAsyncError(async (req, res, next) => {
+    req.body.user = req.user.id; // Assign logged-in user to product
 
-    req.body.user = req.user.id;
- 
-    const product = await Product.create(req.body)
+    // Populate `user` in reviews if provided
+    if (req.body.reviews && Array.isArray(req.body.reviews)) {
+        req.body.reviews = req.body.reviews.map(review => ({
+            ...review,
+            user: req.user.id // Automatically add the user
+        }));
+    }
+
+    const product = await Product.create(req.body);
 
     res.status(201).json({
         success: true,
         product
-    })
-})
+    });
+});
 
 
-//Get all products => /api/v1/products?keyword=apple - ito directory nya para sa postman
+
+//Get all products => /api/v1/products - ito directory nya para sa postman
 exports.getProducts = catchAsyncError(async (req, res, next) => {
 
     const resPerPage = 8;//ito yung count ng product na makikita per page
-    const productCount = await Product.countDocuments(); //this just counts all products
+    const productsCount = await Product.countDocuments(); //this just counts all products
     
     const features = new APIFeatures(Product.find(), req.query)   
                         .search() 
@@ -32,12 +40,15 @@ exports.getProducts = catchAsyncError(async (req, res, next) => {
                         .pagination(resPerPage)
     const products = await features.query;
 
-    res.status(200).json({
-        success: true,
-        count: products.length,
-        productCount,
-        products
-    })
+    setTimeout(() => {
+        res.status(200).json({
+            success: true,
+            productsCount,
+            products
+        })
+    }, 2000);
+
+    
 })
 
 //Get Single Product Details => /api/v1/product/:id - ito directory nya para sa postman
