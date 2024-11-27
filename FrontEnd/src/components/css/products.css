@@ -32,3 +32,13 @@
     /* Full yellow stars overlay */
     display: block;
 }
+
+.product-image {
+    width: 100%;
+    /* Make the image fill the container width */
+    height: 200px;
+    /* Set a fixed height for uniformity */
+    object-fit: cover;
+    /* Maintain aspect ratio while filling the height and width */
+    border-radius: 8px;
+}

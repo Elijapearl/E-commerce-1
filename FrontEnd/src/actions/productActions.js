@@ -7,30 +7,36 @@ import {
     CLEAR_ERRORS
 } from '../constants/productConstants';
 
+// Get All Products
 export const getProducts = () => async (dispatch) => {
     try {
         dispatch({ type: ALL_PRODUCTS_REQUEST });
 
+        // API call to fetch products
         const { data } = await axios.get('/api/v1/products/');
 
         dispatch({
             type: ALL_PRODUCTS_SUCCESS,
-            payload: data.products, // You don't need to wrap it in an object
-            productsCount: data.products.length // Ensure the key is correct
+            payload: {
+                products: data.products, // Products from the response
+                productsCount: data.products.length // Total number of products
+            },
         });
 
     } catch (error) {
         dispatch({
             type: ALL_PRODUCTS_FAIL,
-            payload: error.response.data.message
+            payload: 
+                error.response && error.response.data.message
+                    ? error.response.data.message // Backend error message
+                    : error.message, // Fallback to generic error message
         });
     }
 };
 
-
-//clear errors 
-export const clearErrors = () => async (dispatch) => {
+// Clear Errors
+export const clearErrors = () => (dispatch) => {
     dispatch({
-        type: CLEAR_ERRORS
-    })
-}
+        type: CLEAR_ERRORS,
+    });
+};

@@ -18,7 +18,9 @@
     "react-toastify": "^10.0.6",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
+    "sonner": "^1.7.0",
     "styled-components": "^6.1.13",
+    "sweetalert2": "^11.14.5",
     "toastify": "^2.0.1",
     "web-vitals": "^2.1.4"
   },
