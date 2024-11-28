@@ -1,6 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import './css/home.css';
+import { useParams } from 'react-router-dom'; // For React Router v6
+import Search from './layouts/Searching'
 
+import './css/home.css';
+import Pagination from 'react-js-pagination';
 import MetaData from './layouts/MetaData';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../actions/productActions';
@@ -10,9 +13,13 @@ import Loader from './layouts/loader';
 import { toast, Toaster } from 'sonner'; // Import Sonner
 
 const Home = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+
     const dispatch = useDispatch();
-    const { loading, products, error } = useSelector((state) => state.products);
+    const { loading, products, error, productsCount, resPerPage } = useSelector((state) => state.products);
     const [hasErrorToast, setHasErrorToast] = useState(false); // Track if error toast is shown
+
+    const { keyword = "" } = useParams(); // Use useParams for React Router v6
 
     useEffect(() => {
         if (error && !hasErrorToast) {
@@ -24,8 +31,12 @@ const Home = () => {
             });
             setHasErrorToast(true); // Ensure the toast doesn't re-trigger
         }
-        dispatch(getProducts());
-    }, [dispatch, error, hasErrorToast]); // Add `hasErrorToast` to dependencies
+        dispatch(getProducts(keyword, currentPage)); // Dispatch with keyword and currentPage
+    }, [dispatch, error, hasErrorToast, currentPage, keyword]); // Added keyword to dependencies
+
+    function setCurrentPageNo(pageNumber) {
+        setCurrentPage(pageNumber);
+    }
 
     return (
         <Fragment>
@@ -55,7 +66,14 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <h1 id="products_heading">Products</h1>
+                    <div className="d-flex justify-content-between align-items-center flex-wrap">
+                        <h1 id="products_heading" className="mb-3 mb-md-0">Products</h1>
+
+                        <div className="col-12 col-md-6 mt-2 mt-md-0">
+                            <Search />
+                        </div>
+                    </div>
+
                     <section id="products" className="container mt-5">
                         <div className="row">
                             {products && products.map((product) => (
@@ -63,6 +81,23 @@ const Home = () => {
                             ))}
                         </div>
                     </section>
+
+                    {resPerPage < productsCount && (
+                        <div className="d-flex justify-content-center mt-5">
+                            <Pagination
+                                activePage={currentPage}
+                                itemsCountPerPage={resPerPage}
+                                totalItemsCount={productsCount}
+                                onChange={setCurrentPageNo}
+                                nextPageText={'Next'}
+                                prevPageText={'Prev'}
+                                firstPageText={'First'}
+                                lastPageText={'Last'}
+                                itemClass='page-item'
+                                linkClass='page-link'
+                            />
+                        </div> 
+                    )}
                 </Fragment>
             )}
         </Fragment>

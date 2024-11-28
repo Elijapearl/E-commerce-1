@@ -13,6 +13,7 @@
   letter-spacing: 2px;
 }
 
+
 .menu {
   margin-left: -30px;
 }
@@ -24,10 +25,6 @@
   font-size: 2.3vh;
 }
 
-.navbar a:hover {
-  color: #27ae60;
-}
-
 .cart-count {
   background-color: #124f20;
   width: 24px;
@@ -37,4 +34,9 @@
   top: 22px;
   right: 25px;
   color: white;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /* Replace with your desired font */
 }

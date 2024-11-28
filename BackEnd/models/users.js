@@ -52,11 +52,9 @@ const userSchema = new mongoose.Schema({
     kapag nagsend ng reset password token is may 
     expiration date ung token na sinend sayo 
     */
-    
 })
 
 //encrypt password before saving user
-
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
         next()
@@ -80,7 +78,6 @@ userSchema.methods.getJwtToken = function (){
 
 
 //Generate password reset token
-
 userSchema.methods.getResetPasswordToken = function (){
     //Generate a token
     const resetToken = crypto.randomBytes(20).toString('hex');

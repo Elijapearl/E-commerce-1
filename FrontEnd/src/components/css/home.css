@@ -67,3 +67,56 @@
     color: black;
     text-decoration: none;
 }
+
+
+/* Style the pagination links */
+.page-link {
+    color: #000000;
+    /* Text color */
+    background-color: #fbfbfb;
+    /* Background color */
+    border: 1px solid #000000;
+    /* Border color */
+}
+
+.page-link:hover {
+    color: black;
+    border-color: #000000;
+}
+
+#search_btn {
+    border: 1px black solid;
+    border-radius: 1px;
+}
+
+#search_field {
+    border: 1px solid #000000;
+}
+
+#search_field:focus {
+    outline: none;
+    /* Removes the blue outline */
+    box-shadow: none;
+    /* Removes the shadow */
+}
+
+
+/* Active page styling */
+.page-item.active .page-link {
+    color: #ffffff;
+    /* Active text color */
+    background-color: #000000;
+    /* Active background color */
+    border-color: #000000;
+    /* Active border color */
+}
+
+/* Disabled page styling */
+.page-item.disabled .page-link {
+    color: #000000;
+    /* Disabled text color */
+    background-color: #f8f9fa;
+    /* Disabled background color */
+    border-color: #000000;
+    /* Disabled border */
+}
