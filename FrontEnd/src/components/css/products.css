@@ -1,0 +1,44 @@
+.rating-outer {
+    position: relative;
+    display: inline-block;
+    font-size: 1.5rem;
+    /* Adjust size as needed */
+    color: #ccc;
+    /* Gray stars */
+    overflow: hidden;
+    /* Clip the yellow stars inside the container */
+}
+
+.rating-outer::before {
+    content: "★★★★★";
+    /* Full gray stars */
+    display: block;
+}
+
+.rating-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    /* Prevent wrapping */
+    overflow: hidden;
+    /* Ensure only part of the stars is visible */
+    color: yellow;
+    /* Yellow stars */
+}
+
+.rating-inner::before {
+    content: "★★★★★";
+    /* Full yellow stars overlay */
+    display: block;
+}
+
+.product-image {
+    width: 100%;
+    /* Make the image fill the container width */
+    height: 200px;
+    /* Set a fixed height for uniformity */
+    object-fit: cover;
+    /* Maintain aspect ratio while filling the height and width */
+    border-radius: 8px;
+}

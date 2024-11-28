@@ -1,0 +1,36 @@
+ .border {
+     height: 500px;
+     overflow: hidden;
+     margin-top: 100px;
+ }
+
+
+ .image1 {
+     height: 500px;
+     width: 100%;
+     object-fit: fill;
+ }
+
+ .description {
+     width: 525px;
+     /* Set desired width */
+     height: 150px;
+     /* Set desired height */
+     border: 1px solid #ccc;
+     /* Optional: Border to see the box */
+     padding: 10px;
+     /* Optional: Inner spacing */
+     overflow: auto;
+     /* Adds a scrollbar if content exceeds the box */
+     word-wrap: break-word;
+     /* Ensures long words wrap to the next line */
+     text-align: justify;
+ }
+
+ .greenColor {
+     color: black;
+ }
+
+ .redColor {
+     color: red;
+ }
