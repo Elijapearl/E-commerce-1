@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Route, Link} from 'react-router-dom';
 
 import '../../App.css'
 
@@ -17,7 +18,7 @@ const Header = () => {
             </div>
 
             <div className="image-div">
-                <a href="/user-profile"><img src="/images/User.svg" alt="User profile"/></a>
+                <Link to="/login"><img src="/images/User.svg" alt="User profile"/></Link>
                 <span className="cart-span">
                     <a href="/cart"><img src="/images/Cart.svg" alt="Shopping cart"/></a>
                     <div className="cart-count">0</div>

@@ -5,7 +5,7 @@ import Footer from './components/layouts/footer';
 import Home from './components/Home';
 
 import ProductDetails from './components/product/ProductDetails'
-
+import Login from './components/user/login'
 
 
 function App() {
@@ -19,6 +19,9 @@ function App() {
             <Route path="/search/:keyword" element={<Home />} />
 
             <Route path="/product/:id" element={<ProductDetails />} />
+
+
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
         <Footer />

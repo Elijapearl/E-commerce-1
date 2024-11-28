@@ -47,7 +47,7 @@ exports.getProducts = catchAsyncError(async (req, res, next) => {
             resPerPage,
             products
         })
-    }, 800);
+    }, 300);
 
     
 })
